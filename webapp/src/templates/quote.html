@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Get a Quote {% endblock %}</h1>
+    <form method="post">
+        <h2>Enter your SSN</h2>
+        <input type="text" id="fieldSsn" class="quote-input" name="ssn" placeholder="555-55-5555" pattern="\d{3}-?\d{2}-?\d{4}" value="{{ request.form['dob'] }}"></input>
+
+        <h2>Select Your Product</h2>
+        <select name="product" id="product" class="quote-input" value="{{ request.form['product'] }}">
+            <option value="HealthEssential">HealthEssential</option>
+            <option value="HealthElite">HealthElite</option>
+            <option value="LifeEssential">LifeEssential</option>
+            <option value="LifeElite">LifeElite</option>
+          </select>
+        <br>
+
+        <h2>Health Questionnaire</h2>
+
+        <label for="smoke">Do you smoke? </label>
+        <br>
+        <select name="smoke" id="smoke" class="quote-input" value="{{ request.form['smoke'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="fingers">Do you have yellowing of the fingers? </label>
+        <br>
+        <select name="fingers" id="fingers" class="quote-input" value="{{ request.form['fingers'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="anxiety">Do you have anxiety? </label>
+        <br>
+        <select name="anxiety" id="anxiety" class="quote-input" value="{{ request.form['anxiety'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="peer">Do you give in to peer pressure? </label>
+        <br>
+        <select name="peer" id="peer" class="quote-input" value="{{ request.form['peer'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="chronic">Do you have any chronic diseases? </label>
+        <br>
+        <select name="chronic" id="chronic" class="quote-input" value="{{ request.form['chronic'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="fatigue">Do you suffer from fatigue? </label>
+        <br>
+        <select name="fatigue" id="fatigue" class="quote-input" value="{{ request.form['fatigue'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="allergies">Do you suffer from allergies? </label>
+        <br>
+        <select name="allergies" id="allergies" class="quote-input" value="{{ request.form['allergies'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="wheeze">Do you wheeze when you breathe? </label>
+        <br>
+        <select name="wheeze" id="wheeze" class="quote-input" value="{{ request.form['wheeze'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="alcohol">Do you drink alcohol? </label>
+        <br>
+        <select name="alcohol" id="alcohol" class="quote-input" value="{{ request.form['alcohol'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="cough">Do you have a persistent cough? </label>
+        <br>
+        <select name="cough" id="cough" class="quote-input" value="{{ request.form['cough'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="breath">Do you suffer from shortness of breath? </label>
+        <br>
+        <select name="breath" id="breath" class="quote-input" value="{{ request.form['breath'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="swallow">Do you have difficulty swallowing? </label>
+        <br>
+        <select name="swallow" id="swallow" class="quote-input" value="{{ request.form['swallow'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <label for="chest">Do you have any chest pain? </label>
+        <br>
+        <select name="chest" id="chest" class="quote-input" value="{{ request.form['chest'] }}">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br>
+
+        <button type="submit">Get Quote</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Get a Policy {% endblock %}</h1>
+    <form method="post">
+        <h2>Look up your Account</h2>
+
+        <label for="fieldSsn">SSN: </label>
+        <br>
+        <input type="text" id="fieldSsn" class="quote-input" name="ssn" placeholder="555-55-5555" pattern="\d{3}-?\d{2}-?\d{4}" value="{{ request.form['dob'] }}"></input>
+        <br>
+
+        <h2>Select Your Product</h2>
+        <select name="product" id="product" class="quote-input" value="{{ request.form['product'] }}">
+            <option value="HealthEssential">HealthEssential</option>
+            <option value="HealthElite">HealthElite</option>
+            <option value="LifeEssential">LifeEssential</option>
+            <option value="LifeElite">LifeElite</option>
+          </select>
+        <br>
+
+        <h2>Select Your Company</h2>
+        <select name="company" id="company" class="quote-input" value="{{ request.form['company'] }}">
+            <option value="1 - BigBox Toys">1 - BigBox Toys</option>
+            <option value="2 - Wholesome Foods">2 - Wholesome Foods</option>
+            <option value="3 - Superfast Motors">3 - Superfast Motors</option>
+            <option value="4 - Airborne Airlines">4 - Airborne Airlines</option>
+            <option value="5 - Chemicals Inc">5 - Chemicals Inc</option>
+            <option value="6 - Software Co.">6 - Software Co.</option>
+          </select>
+        <br>
+
+        <h2>Address Info</h2>
+        <label for="title">Account Name</label>
+        <br>
+        <input type="text" name="account_name" class="quote-input"
+               placeholder="Account Nickname"
+               value="{{ request.form['account_name'] }}"></input>
+        <br>
+
+        <label for="title">Address 1</label>
+        <br>
+        <input type="text" name="address_1" class="quote-input"
+               placeholder="888 Foo Way"
+               value="{{ request.form['address_1'] }}"></input>
+        <br>
+
+        <label for="title">Address 2</label>
+        <br>
+        <input type="text" name="address_2" class="quote-input"
+               placeholder="Apt 999"
+               value="{{ request.form['address_2'] }}"></input>
+        <br>
+
+        <label for="title">City</label>
+        <br>
+        <input type="text" name="city" class="quote-input"
+               placeholder="New York City"
+               value="{{ request.form['city'] }}"></input>
+        <br>
+
+        <label for="title">State</label>
+        <br>
+        <input type="text" name="state" class="quote-input"
+               placeholder="NY"
+               value="{{ request.form['state'] }}"></input>
+        <br>
+
+        <label for="title">Zip</label>
+        <br>
+        <input type="number" name="zip" class="quote-input"
+               placeholder="11101"
+               value="{{ request.form['zip'] }}"></input>
+        <br>
+
+        <button type="submit">Get Quote</button>
+    </form>
+{% endblock %}

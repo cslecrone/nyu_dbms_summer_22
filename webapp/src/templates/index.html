@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to Insurance Co {% endblock %}</h1>
+    <h3><a href="{{ url_for('signup') }}">Create an Account</a> today!</h3>
+{% endblock %}

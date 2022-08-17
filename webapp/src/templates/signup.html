@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Create Your Account {% endblock %}</h1>
+    <form method="post">
+
+        <h2>Personal Information</h2>
+
+        <label for="title">First Name</label>
+        <br>
+        <input type="text" name="first_name" class="quote-input"
+               placeholder="John"
+               value="{{ request.form['first_name'] }}"></input>
+        <br>
+
+        <label for="title">Middle Initial</label>
+        <br>
+        <input type="text" name="middle_initial" class="quote-input"
+               placeholder="D"
+               value="{{ request.form['middle_initial'] }}"></input>
+        <br>
+
+        <label for="title">Last Name</label>
+        <br>
+        <input type="text" name="last_name" class="quote-input"
+               placeholder="Smith"
+               value="{{ request.form['last_name'] }}"></input>
+        <br>
+
+        <label for="title">Email Address</label>
+        <br>
+        <input type="email" name="email_address" class="quote-input"
+               placeholder="foo@bar.com"
+               value="{{ request.form['email_address'] }}"></input>
+        <br>
+
+        <label for="title">Date of Birth</label>
+        <br>
+        <input type="date" name="dob" class="quote-input"
+               value="{{ request.form['dob'] }}"></input>
+        <br>
+
+        <label for="title">Gender</label>
+        <br>
+        <select name="gender" id="gender" class="quote-input" value="{{ request.form['gender'] }}">
+            <option value="M">M</option>
+            <option value="F">F</option>
+        </select>
+        <br>
+
+        <label for="fieldSsn">SSN: </label>
+        <br>
+        <input type="text" id="fieldSsn" class="quote-input" name="ssn" placeholder="555-55-5555" pattern="\d{3}-?\d{2}-?\d{4}" value="{{ request.form['dob'] }}"></input>
+        <br>
+
+        <button type="submit">Sign Up</button>
+    </form>
+{% endblock %}
