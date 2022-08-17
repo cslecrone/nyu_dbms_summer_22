@@ -1,8 +1,7 @@
 from datetime import datetime
-from uuid import uuid4
 import warnings
 
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request, flash
 
 from db import (
     Customer,
@@ -128,7 +127,10 @@ def quote():
             result = int(predict(MODEL, normalize_sample_data(data))[-1])
 
             # Increase prices by 50% if somebody is likely to develop lung cancer
-            multiplier = result * 1.5
+            if result:
+                multiplier = 1.5
+            else:
+                multiplier = 1
 
             cost = float(rider.annualizedpremium) * multiplier
             add_quote(ssn, cost, planname, db_session)
