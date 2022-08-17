@@ -56,5 +56,6 @@ $ export FLASK_APP=app
 $ export FLASK_ENV=development
 
 # Start the app
+$ cd src/
 $ flask run
 ```
