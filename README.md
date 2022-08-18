@@ -18,7 +18,7 @@ $ apt-get install postgres
 # Red Hat Linux Distributions
 $ yum install postgres
 ```
-Once the database is installed, ensure that the Postgres is started:
+Once the database is installed, ensure that the Postgres is started. Below is an example of how to install on MacOS, check the [Postgres documentation](https://www.postgresql.org/docs/current/server-start.html) for other operating systems. 
 
 ```
 $ brew services start postgresql
@@ -39,6 +39,7 @@ Once you have an account configured, restore the database included in the reposi
 # From inside the repository
 $ psql -U <username> -f ./webapp/data/db/insurance_company.sql
 ```
+The app assumes Postgres is running on its default port of `5432`. Make sure its using the correct port!
 
 ## Installing webapp dependencies
 
