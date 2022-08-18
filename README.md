@@ -18,11 +18,26 @@ $ apt-get install postgres
 # Red Hat Linux Distributions
 $ yum install postgres
 ```
-Once the database is installed, restore the database configuration:
+Once the database is installed, ensure that the Postgres is started:
 
 ```
+$ brew services start postgresql
+```
+You may also need to create a new user:
+```
+# Connect to the database
+$ psql postgres
+
+# Replace 'newUser' with your desired username and password with your 'password'
+postgres=# CREATE ROLE newUser WITH LOGIN PASSWORD ‘password’; 
+postgres=# ALTER ROLE newUser CREATEDB;
+postgres=# exit
+```
+
+Once you have an account configured, restore the database included in the repository:
+```
 # From inside the repository
-$ psql -f ./webapp/data/db/insurance_company.sql
+$ psql -U <username> -f ./webapp/data/db/insurance_company.sql
 ```
 
 ## Installing webapp dependencies
@@ -59,3 +74,4 @@ $ export FLASK_ENV=development
 $ cd src/
 $ flask run
 ```
+Flask should attempt to start the webserver and provide a URL to access the application (usually `127.0.0.1:5000`). 
