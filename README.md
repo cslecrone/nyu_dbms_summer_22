@@ -23,7 +23,7 @@ Once the database is installed, ensure that the Postgres is started. Below is an
 ```
 $ brew services start postgresql
 ```
-You may also need to create a new user:
+Once `postgressl` is running, create a new user:
 ```
 # Connect to the database
 $ psql postgres
@@ -31,7 +31,10 @@ $ psql postgres
 # Replace 'newUser' with your desired username and password with your 'password'
 postgres=# CREATE ROLE newUser WITH LOGIN PASSWORD ‘password’; 
 postgres=# ALTER ROLE newUser CREATEDB;
-postgres=# exit
+```
+Also create a new database:
+```
+postgres=# CREATE DATABASE dbms;
 ```
 
 Once you have an account configured, restore the database included in the repository:
